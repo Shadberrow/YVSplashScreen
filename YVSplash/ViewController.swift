@@ -9,17 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let view = YVSplashView(image: #imageLiteral(resourceName: "genius").withRenderingMode(.alwaysTemplate), size: CGSize(width: 100, height: 100), color: .black)
+        view.delay = 2
+        view.duration = 1.5
+        view.repeatCount = 3
+        view.imageColor = .white
+        
+        view.animate({
+            print("DONE")
+        })
+        
+        self.view.addSubview(view)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
